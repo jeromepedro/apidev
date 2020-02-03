@@ -1,0 +1,77 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "meteo",
+    "version": "1.0"
+  },
+  "host": "localhost:5001",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "paths": {
+    "/temperature/{cityId}": {
+      "parameters": [
+        {
+          "type": "string",
+          "name": "cityId",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                },
+                "temperature": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-temperature-cityId"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-temperature-cityId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                },
+                "temperature": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {}
+}
